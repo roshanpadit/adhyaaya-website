@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | ADHYAAYA</title>
+    <meta name="description" content="Register for events at ADHYAAYA.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">ADHYAAYA</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
+                <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="page-header">
+            <h1>Register Now</h1>
+            <p>Secure your spot at ADHYAAYA. We're excited to see you!</p>
+        </section>
+        <section class="form-section">
+            <form class="registration-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="college">College Name</label>
+                    <input type="text" id="college" name="college" required>
+                </div>
+                <div class="form-group">
+                    <label for="event">Choose Event / Workshop</label>
+                    <select id="event" name="event" required>
+                        <option value="" disabled selected>Select an option...</option>
+                        <optgroup label="Technical Events">
+                            <option value="hackathon">Quantum Hackathon</option>
+                            <option value="codejam">Code Jam</option>
+                            <option value="robowars">Robo Wars</option>
+                        </optgroup>
+                        <optgroup label="Non-Technical Events">
+                            <option value="gaming">Gaming Tournament</option>
+                            <option value="design">Design Contest</option>
+                            <option value="quiz">Tech Quiz</option>
+                        </optgroup>
+                        <optgroup label="Workshops">
+                            <option value="workshop-ai">AI & ML Workshop</option>
+                            <option value="workshop-qc">Quantum Computing 101</option>
+                            <option value="workshop-bc">Blockchain Basics</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Questions or Comments? (Optional)</label>
+                    <textarea id="comments" name="comments" rows="4"></textarea>
+                </div>
+                <button type="submit" class="cta-button">Submit Registration</button>
+            </form>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-column about">
+                <a href="index.html" class="footer-logo">ADHYAAYA</a>
+                <p>Exploring the frontiers of technology through the lens of quantum computing. Join us for a celebration of innovation.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sponsors.html">Sponsors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ADHYAAYA Tech Fest. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
