@@ -5,7 +5,9 @@ const countdown = () => {
     const gap = countDate - now;
 
     if (gap < 0) {
-        document.getElementById("countdown-timer").innerHTML = "<div class='fest-live' style='font-size: 1.5rem; color: var(--primary-color);'>The Fest is Live!</div>";
+        if (document.getElementById("countdown-timer")) {
+            document.getElementById("countdown-timer").innerHTML = "<div class='fest-live' style='font-size: 1.5rem; color: var(--primary-color);'>The Fest is Live!</div>";
+        }
         return;
     }
 
@@ -15,14 +17,34 @@ const countdown = () => {
     const textMinute = Math.floor((gap % hour) / minute);
     const textSecond = Math.floor((gap % minute) / second);
 
-    document.getElementById('days').innerText = textDay;
-    document.getElementById('hours').innerText = textHour;
-    document.getElementById('minutes').innerText = textMinute;
-    document.getElementById('seconds').innerText = textSecond;
+    if (document.getElementById("countdown-timer")) {
+        document.getElementById('days').innerText = textDay;
+        document.getElementById('hours').innerText = textHour;
+        document.getElementById('minutes').innerText = textMinute;
+        document.getElementById('seconds').innerText = textSecond;
+    }
 };
 
 if (document.getElementById("countdown-timer")) {
     setInterval(countdown, 1000);
+}
+
+// --- Registration Fee Logic ---
+const eventSelect = document.getElementById('event');
+const feeElement = document.getElementById('fee');
+
+if (eventSelect && feeElement) {
+    eventSelect.addEventListener('change', () => {
+        const selectedOption = eventSelect.options[eventSelect.selectedIndex];
+        const text = selectedOption.text;
+        
+        const feeMatch = text.match(/₹(\d+)/);
+        if (feeMatch) {
+            feeElement.innerText = `₹${feeMatch[1]}.00`;
+        } else {
+            feeElement.innerText = "Free";
+        }
+    });
 }
 
 // --- Hamburger Menu Logic ---
@@ -51,6 +73,19 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.category-link, .team-member, .sponsor-logo');
 hiddenElements.forEach((el) => observer.observe(el));
 
+// --- FAQ Accordion Logic ---
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+        const currentlyActive = document.querySelector('.faq-item.active');
+        if (currentlyActive && currentlyActive !== item) {
+            currentlyActive.classList.remove('active');
+        }
+        item.classList.toggle('active');
+    });
+});
 
 // --- particles.js config ---
 if (document.getElementById("particles-js")) {
