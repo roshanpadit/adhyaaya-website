@@ -208,13 +208,38 @@ main, footer {
 
 /* --- Media Query for Responsiveness --- */
 @media (max-width: 1024px) {
-    .nav-menu { position: fixed; display: none; left: -100%; top: 5rem; width: 100%; height: calc(100vh - 5rem); background-color: rgba(10, 10, 20, 0.95); backdrop-filter: blur(10px); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; transition: left 0.3s ease-in-out; transform: none; }
-    .nav-menu.active { left: 0; }
-    .nav-item { margin: 1rem 0; }
-    .nav-action-mobile { display: block; }
-    .nav-actions { display: flex; /* Kept for hamburger alignment */ }
-    .nav-actions .cta-button-small { display: none; } /* Hide desktop button */
-    .hamburger { display: block; }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: rgba(10, 10, 20, 0.95);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        height: calc(100vh - 5rem);
+        text-align: center;
+        transition: left 0.3s ease-in-out;
+        gap: 2rem;
+        justify-content: center;
+        /* Remove transform and absolute positioning for mobile */
+        transform: none; 
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-item {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+    }
+    .nav-action-mobile {
+        display: block;
+    }
+    .nav-actions {
+        display: none; /* Hide the desktop container */
+    }
+    .hamburger {
+        display: block;
+    }
 }
 @media (max-width: 992px) {
     .contact-grid, .portal-section { grid-template-columns: 1fr; }
