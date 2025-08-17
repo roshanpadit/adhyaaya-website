@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | ADHYAAYA</title>
+    <meta name="description" content="Your personal dashboard for ADHYAAYA events, ID card, and certificates.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">ADHYAAYA</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+                <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="index.html" class="cta-button-small">Logout</a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="page-header">
+            <h1>Welcome, [User Name]!</h1>
+            <p>This is your personal hub for ADHYAAYA.</p>
+        </section>
+        <section class="dashboard-section">
+            <div class="dashboard-card" id="digital-id">
+                <h3>Your Digital ID Card</h3>
+                <div class="id-card">
+                    <div class="id-header">
+                        <img src="https://via.placeholder.com/100x100.png?text=ADHYAAYA" alt="ADHYAAYA Logo" class="id-logo">
+                        <h4>ADHYAAYA ATTENDEE</h4>
+                    </div>
+                    <div class="id-body">
+                        <div class="id-photo">
+                            <img src="https://via.placeholder.com/150" alt="Attendee Photo">
+                        </div>
+                        <div class="id-details">
+                            <p><strong>Name:</strong> [User Name]</p>
+                            <p><strong>College:</strong> [User College]</p>
+                            <p><strong>Unique ID:</strong> ADH2026-XXXX</p>
+                        </div>
+                    </div>
+                    <div class="id-qr">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=ADH2026-XXXX" alt="QR Code">
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-card" id="my-events">
+                <h3>My Registered Events</h3>
+                <ul class="registered-events-list">
+                    <li><p><strong>Quantum Hackathon</strong></p><span>Status: Payment Confirmed</span></li>
+                    <li><p><strong>AI & ML Workshop</strong></p><span>Status: Payment Confirmed</span></li>
+                </ul>
+            </div>
+            <div class="dashboard-card" id="my-certificates">
+                <h3>My Certificates</h3>
+                <p class="certificates-notice">Certificates will be available for download here 5 days after the fest concludes.</p>
+                <ul class="certificates-list">
+                    </ul>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-column about">
+                <a href="index.html" class="footer-logo">ADHYAAYA</a>
+                <p>Exploring the frontiers of technology through the lens of quantum computing. Join us for a celebration of innovation.</p>
+            </div>
+            <div class="footer-column links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login-register.html">Login/Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-column social">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="legal-section">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span>|</span>
+            <a href="terms.html">Terms & Conditions</a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ADHYAAYA Tech Fest. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
