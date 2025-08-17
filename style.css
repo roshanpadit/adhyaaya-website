@@ -1,0 +1,260 @@
+/* Import a Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+/* --- CSS Variables (Our Quantum Palette) --- */
+:root {
+    --bg-color: #0a0a14; /* Deep, dark blue */
+    --primary-color: #00f7ff; /* Neon Cyan/Blue */
+    --secondary-color: #9f00ff; /* Neon Purple */
+    --text-color: #e0e0e0; /* Light grey for readability */
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* --- General Resets & Body Styling --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Navigation Bar Styling --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(10, 10, 20, 0.8);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* We will hide the hamburger on desktop */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Hero Section Styling --- */
+.hero {
+    height: 100vh; /* Takes up the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    /* We can add a cool background later! */
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-title .highlight {
+    color: var(--primary-color);
+    text-shadow: 0 0 15px var(--primary-color);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.cta-button {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+/* --- Footer Styling --- */
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* --- Events Section Styling --- */
+.events-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* The magic for responsiveness! */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+    border: 1px solid rgba(0, 247, 255, 0.2);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+    /* --- Scroll Animation Styling --- */
+    opacity: 0; /* Start hidden */
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+}
+
+.event-card.show {
+    opacity: 1; /* Fade in */
+    transform: translateY(0);
+}
+
+
+.event-card:hover {
+    transform: translateY(-10px); /* Lifts the card on hover */
+    box-shadow: 0 10px 30px rgba(0, 247, 255, 0.1);
+}
+
+.event-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.event-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.event-card p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+}
+/* --- Media Query for Responsiveness --- */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Start off-screen */
+        top: 5rem; /* Position below the navbar */
+        flex-direction: column;
+        background-color: var(--bg-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0; /* Slide into view */
+    }
+
+    .nav-item {
+        margin: 1.5rem 0;
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger icon */
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0; /* Hide the middle bar */
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg); /* Top bar transforms into X */
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg); /* Bottom bar transforms into X */
+    }
+    
+    .hero-title {
+        font-size: 2.8rem; /* Make title smaller on mobile */
+    }
+}
+/* Add this to your style.css file */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place it behind the hero content */
+}
+
+.hero-content {
+    position: relative; /* Ensure hero content stays on top */
+    z-index: 1;
+}
