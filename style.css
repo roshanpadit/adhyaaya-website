@@ -208,18 +208,17 @@ main, footer {
 
 /* --- Media Query for Responsiveness --- */
 @media (max-width: 1024px) {
-    .nav-menu { position: fixed; left: -100%; top: 5rem; width: 100%; height: calc(100vh - 5rem); background-color: var(--bg-color); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; transition: 0.3s; }
+    .nav-menu { position: fixed; display: none; left: -100%; top: 5rem; width: 100%; height: calc(100vh - 5rem); background-color: rgba(10, 10, 20, 0.95); backdrop-filter: blur(10px); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; transition: left 0.3s ease-in-out; transform: none; }
     .nav-menu.active { left: 0; }
     .nav-item { margin: 1rem 0; }
     .nav-action-mobile { display: block; }
-    .nav-actions { display: none; }
+    .nav-actions { display: flex; /* Kept for hamburger alignment */ }
+    .nav-actions .cta-button-small { display: none; } /* Hide desktop button */
     .hamburger { display: block; }
 }
-
 @media (max-width: 992px) {
     .contact-grid, .portal-section { grid-template-columns: 1fr; }
 }
-
 @media (max-width: 768px) {
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
