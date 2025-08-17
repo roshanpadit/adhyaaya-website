@@ -208,37 +208,42 @@ main, footer {
 
 /* --- Media Query for Responsiveness --- */
 @media (max-width: 1024px) {
+    .nav-actions {
+        display: none; /* Hide the desktop-only button container */
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger icon */
+    }
+
     .nav-menu {
+        /* Reset desktop styles and set up for mobile */
         position: fixed;
         left: -100%;
         top: 5rem;
+        transform: none; /* THIS IS THE KEY FIX: Resets the desktop centering */
+        
         flex-direction: column;
-        background-color: rgba(10, 10, 20, 0.95);
-        backdrop-filter: blur(10px);
+        justify-content: center;
         width: 100%;
         height: calc(100vh - 5rem);
-        text-align: center;
-        transition: left 0.3s ease-in-out;
+        background-color: rgba(10, 10, 20, 0.98);
+        backdrop-filter: blur(10px);
         gap: 2rem;
-        justify-content: center;
-        /* Remove transform and absolute positioning for mobile */
-        transform: none; 
+        transition: left 0.3s ease-in-out;
     }
+
     .nav-menu.active {
-        left: 0;
+        left: 0; /* This slides the menu into view */
     }
+
     .nav-item {
         margin: 1rem 0;
         font-size: 1.2rem;
     }
+
     .nav-action-mobile {
-        display: block;
-    }
-    .nav-actions {
-        display: none; /* Hide the desktop container */
-    }
-    .hamburger {
-        display: block;
+        display: block; /* Ensure the mobile button is visible inside the menu */
     }
 }
 @media (max-width: 992px) {
