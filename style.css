@@ -13,7 +13,7 @@
 /* --- General Resets & Body Styling --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-family); background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+body { font-family: var(--font-family); background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; padding-top: 5rem; }
 
 main, footer {
     position: relative;
@@ -24,9 +24,9 @@ main, footer {
 #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
 
 /* --- Navigation Bar Styling --- */
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background-color: rgba(10, 10, 20, 0.8); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 100; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background-color: rgba(10, 10, 20, 0.8); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 100; height: 5rem; }
 .nav-logo { color: var(--primary-color); text-decoration: none; font-size: 1.8rem; font-weight: 700; }
-.nav-menu { display: flex; list-style: none; gap: 1.5rem; align-items: center; }
+.nav-menu { display: flex; list-style: none; gap: 1.5rem; align-items: center; position: absolute; left: 50%; transform: translateX(-50%); }
 .nav-link { color: var(--text-color); text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem; }
 .nav-link:hover { color: var(--primary-color); }
 .nav-actions { display: flex; align-items: center; gap: 1rem; }
@@ -37,7 +37,7 @@ main, footer {
 .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--text-color); transition: all 0.3s ease-in-out; }
 
 /* --- Hero Section Styling --- */
-.hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; padding: 0 2rem; background-color: transparent; }
+.hero { height: calc(100vh - 5rem); display: flex; justify-content: center; align-items: center; text-align: center; padding: 0 2rem; background-color: transparent; }
 .hero-content { position: relative; z-index: 1; }
 .hero-title { font-size: 4rem; margin-bottom: 1rem; }
 .hero-title .highlight { color: var(--primary-color); text-shadow: 0 0 15px var(--primary-color); }
@@ -103,7 +103,7 @@ main, footer {
 .footer-bottom { text-align: center; padding-top: 1rem; font-size: 0.9rem; color: #777; }
 
 /* --- Page Specific Styles --- */
-.page-header { text-align: center; padding: 8rem 2rem 4rem; background: linear-gradient(rgba(10, 10, 20, 0.8), rgba(10, 10, 20, 0.9)); }
+.page-header { text-align: center; padding: 4rem 2rem; background: linear-gradient(rgba(10, 10, 20, 0.8), rgba(10, 10, 20, 0.9)); }
 .page-header h1 { font-size: 3.5rem; color: var(--primary-color); }
 .category-title { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 2rem; margin-top: 3rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem; text-align: center; }
 .detailed-events .category-title:first-child, .full-team-section .category-title:first-child, .full-sponsors-section .category-title:first-child { margin-top: 0; }
@@ -207,19 +207,20 @@ main, footer {
 .category-link.show, .team-member.show, .sponsor-logo.show { opacity: 1; transform: none; }
 
 /* --- Media Query for Responsiveness --- */
-@media (max-width: 1200px) { .nav-menu { gap: 1.2rem; } }
-@media (max-width: 992px) {
-    .navbar { position: relative; } /* Needed for absolute positioning of mobile menu */
-    .nav-menu { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); } /* Centering for desktop */
-    .nav-actions { display: none; }
-    .hamburger { display: block; }
-    .nav-menu.active { display: flex; font-size: 1.2rem; position: fixed; left: 0; top: 5rem; flex-direction: column; background-color: var(--bg-color); width: 100%; text-align: center; box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05); padding: 1rem 0; align-items: center; transform: none; }
+@media (max-width: 1024px) {
+    .nav-menu { position: fixed; left: -100%; top: 5rem; width: 100%; height: calc(100vh - 5rem); background-color: var(--bg-color); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; transition: 0.3s; }
+    .nav-menu.active { left: 0; }
     .nav-item { margin: 1rem 0; }
     .nav-action-mobile { display: block; }
+    .nav-actions { display: none; }
+    .hamburger { display: block; }
+}
+
+@media (max-width: 992px) {
     .contact-grid, .portal-section { grid-template-columns: 1fr; }
 }
+
 @media (max-width: 768px) {
-    .nav-menu { gap: 1.5rem; }
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
