@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | ADHYAAYA</title>
-    <meta name="description" content="Frequently Asked Questions about the ADHYAAYA tech fest.">
+    <title>FAQ & Feedback | ADHYAAYA</title>
+    <meta name="description" content="Frequently Asked Questions and feedback form for the ADHYAAYA tech fest.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script src="script.js" defer></script>
@@ -17,13 +17,13 @@
                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
                 <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
                 <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+                <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="portal.html" class="nav-link">Portal</a></li>
-                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
             </ul>
+            <div class="nav-actions">
+                <a href="login-register.html" class="cta-button-small">Login/Register</a>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -33,54 +33,93 @@
     </header>
     <main>
         <section class="page-header">
-            <h1>Frequently Asked Questions</h1>
-            <p>Have a question? We've got answers.</p>
+            <h1>Feedback & FAQ</h1>
+            <p>Help us improve, or find answers to your questions.</p>
         </section>
-        <section class="faq-section">
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Who can participate in ADHYAAYA?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>ADHYAAYA is open to all undergraduate and postgraduate students from any college or university. Some events may have specific prerequisites, which will be mentioned on the event details page.</p>
+        <section class="feedback-faq-section">
+            <div class="feedback-container">
+                <h3>Provide Your Feedback</h3>
+                <p>Your feedback is valuable to us for making future events even better. Thank you for participating!</p>
+                <form class="portal-form">
+                    <div class="form-group">
+                        <label for="feedback-email">Your Email</label>
+                        <input type="email" id="feedback-email" name="feedback-email" required>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How do I register for an event?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>You can register for any event through our <a href="register.html">Registration Page</a>. Simply fill out the form, select the events you wish to participate in, and complete the payment process if applicable. You will receive a confirmation email with your unique ID card.</p>
+                     <div class="form-group">
+                        <label for="feedback-event">Event/Workshop</label>
+                        <select id="feedback-event" name="feedback-event" required>
+                            <option value="" disabled selected>Select an option...</option>
+                            <optgroup label="Technical Events">
+                                <option value="hackathon">Quantum Hackathon</option>
+                                <option value="codejam">Code Jam</option>
+                                <option value="robowars">Robo Wars</option>
+                            </optgroup>
+                            <optgroup label="Non-Technical Events">
+                                <option value="gaming">Gaming Tournament</option>
+                                <option value="design">Design Contest</option>
+                                <option value="quiz">Tech Quiz</option>
+                            </optgroup>
+                            <optgroup label="Workshops">
+                                <option value="workshop-ai">AI & ML Workshop</option>
+                                <option value="workshop-qc">Quantum Computing 101</option>
+                                <option value="workshop-bc">Blockchain Basics</option>
+                            </optgroup>
+                        </select>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Is there a registration fee?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Some of our flagship events and workshops have a nominal registration fee to cover costs. However, many other events, quizzes, and talks are completely free to attend. The fee for each event is listed on the registration page.</p>
+                    <div class="form-group">
+                        <label for="feedback-message">Your Feedback</label>
+                        <textarea id="feedback-message" name="feedback-message" rows="5" required></textarea>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What materials should I bring for a workshop?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>For most technical workshops, you will be required to bring your own laptop and charger. Any other specific software or hardware requirements will be communicated to registered participants via email before the workshop.</p>
+                    <button type="submit" class="cta-button">Submit Feedback</button>
+                </form>
+            </div>
+            <div class="faq-container">
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Who can participate in ADHYAAYA?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>ADHYAAYA is open to all undergraduate and postgraduate students from any college or university. Some events may have specific prerequisites, which will be mentioned on the event details page.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Will I receive a certificate for participation?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, all registered participants who attend an event or workshop will receive a digital certificate of participation. Winners will receive separate certificates of achievement. You can download them from our <a href="portal.html">Attendee Portal</a> 5 days after the fest concludes.</p>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do I register for an event?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can register for any event through our <a href="register.html">Registration Page</a>. Simply fill out the form, select the events you wish to participate in, and complete the payment process if applicable. You will receive a confirmation email with your unique ID card.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is there a registration fee?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Some of our flagship events and workshops have a nominal registration fee to cover costs. However, many other events, quizzes, and talks are completely free to attend. The fee for each event is listed on the registration page.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What materials should I bring for a workshop?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>For most technical workshops, you will be required to bring your own laptop and charger. Any other specific software or hardware requirements will be communicated to registered participants via email before the workshop.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Will I receive a certificate for participation?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, all registered participants who attend an event or workshop will receive a digital certificate of participation. Winners will receive separate certificates of achievement. You can download them from the <a href="login-register.html">Attendee Portal</a> 5 days after the fest concludes.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,20 +129,15 @@
         <div class="footer-grid">
             <div class="footer-column about">
                 <a href="index.html" class="footer-logo">ADHYAAYA</a>
-                <p>Exploring the frontiers of technology through the lens of quantum computing.</p>
+                <p>Exploring the frontiers of technology through the lens of quantum computing. Join us for a celebration of innovation.</p>
             </div>
             <div class="footer-column links">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="sponsors.html">Sponsors</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="portal.html">Portal</a></li>
                     <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login-register.html">Login/Register</a></li>
                 </ul>
             </div>
             <div class="footer-column social">
@@ -116,8 +150,13 @@
                 </div>
             </div>
         </div>
+        <div class="legal-section">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span>|</span>
+            <a href="terms.html">Terms & Conditions</a>
+        </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 ADHYAAYA Tech Fest. All Rights Reserved.</p>
+            <p>© 2026 ADHYAAYA Tech Fest. All Rights Reserved.</p>
         </div>
     </footer>
 </body>

@@ -87,6 +87,25 @@ faqItems.forEach(item => {
     });
 });
 
+// --- Login/Register Tabs ---
+const formTabs = document.querySelectorAll('.form-tab-link');
+const formTabContents = document.querySelectorAll('.form-tab-content');
+
+if(formTabs.length > 0) {
+    formTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = document.querySelector(`#${tab.dataset.tab}`);
+            
+            formTabs.forEach(item => item.classList.remove('active'));
+            formTabContents.forEach(item => item.classList.remove('active'));
+            
+            tab.classList.add('active');
+            target.classList.add('active');
+        });
+    });
+}
+
+
 // --- particles.js config ---
 if (document.getElementById("particles-js")) {
     particlesJS("particles-js", {
