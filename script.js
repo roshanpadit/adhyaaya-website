@@ -56,10 +56,11 @@ hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
 });
 
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+document.querySelectorAll(".nav-link, .nav-action-mobile a").forEach(n => n.addEventListener("click", () => {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }));
+
 
 // --- Scroll Animation Logic ---
 const observer = new IntersectionObserver((entries) => {
@@ -102,6 +103,25 @@ if(formTabs.length > 0) {
             tab.classList.add('active');
             target.classList.add('active');
         });
+    });
+}
+
+// --- Front-end Password Confirmation Demo ---
+const registerForm = document.getElementById('register-form');
+if (registerForm) {
+    registerForm.addEventListener('submit', function(e) {
+        const password = document.getElementById('reg-password');
+        const confirmPassword = document.getElementById('reg-confirm-password');
+        const messageEl = this.querySelector('.form-message');
+
+        if (password.value !== confirmPassword.value) {
+            e.preventDefault(); // Stop form submission
+            messageEl.textContent = 'Passwords do not match. Please try again.';
+            messageEl.style.display = 'block';
+        } else {
+            messageEl.style.display = 'none';
+            // In a real application, the form would submit to the backend here.
+        }
     });
 }
 
