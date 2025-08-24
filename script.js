@@ -107,9 +107,9 @@ if(formTabs.length > 0) {
 }
 
 // --- Front-end Password Confirmation Demo ---
-const registerForm = document.getElementById('register-form');
-if (registerForm) {
-    registerForm.addEventListener('submit', function(e) {
+const registerFormEl = document.getElementById('register-form');
+if (registerFormEl) {
+    registerFormEl.addEventListener('submit', function(e) {
         const password = document.getElementById('reg-password');
         const confirmPassword = document.getElementById('reg-confirm-password');
         const messageEl = this.querySelector('.form-message');
