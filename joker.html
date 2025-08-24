@@ -1,0 +1,200 @@
+I want you to create a full-stack web application for my college’s annual tech fest Adhyaaya.
+The website should be modern, responsive, mobile-first, optimized, and include all required features for managing a large-scale technical fest.
+
+🌐 FRONTEND REQUIREMENTS
+
+Tech stack: React.js + TailwindCSS + Framer Motion (for animations).
+
+General requirements:
+
+Fully responsive (PC, tablet, mobile).
+
+Attractive UI/UX, modern theme (tech + futuristic).
+
+Dark/Light mode toggle.
+
+Multi-language support (English + Hindi/Marathi).
+
+Smooth navigation using React Router.
+
+SEO optimized with meta tags.
+
+🔹 Public Pages
+
+Home Page
+
+Animated banner/hero section with countdown timer to fest.
+
+Fest theme + mission statement.
+
+Highlight of key events, sponsors, and prize money.
+
+CTA (Register Now, View Events).
+
+Events Page
+
+Events fetched dynamically from backend DB.
+
+Categorization: Technical, Non-Technical, Workshops, Cultural.
+
+Each event card: Name, Date, Venue, Rules, Fees, Prizes.
+
+Search bar + category filters.
+
+"Register" button (requires login).
+
+Team Page
+
+Faculty coordinators, heads, core team, volunteers.
+
+Profile cards with photos, names, designations, LinkedIn/social links.
+
+Sponsorship Page
+
+Sponsor tiers: Platinum, Gold, Silver.
+
+Logos, descriptions, and links.
+
+“Become a Sponsor” form → sends details to admin.
+
+Gallery Page
+
+Year-wise albums (2023, 2024, etc.).
+
+Photo grid with lightbox zoom.
+
+YouTube/Vimeo embeds for videos.
+
+Contact Page
+
+Contact form (Name, Email, Message) → stored in DB + email to admin.
+
+Google Maps embed (college location).
+
+Social media links (Instagram, LinkedIn, YouTube).
+
+Results & Announcements Page
+
+Admin can publish announcements dynamically.
+
+Event results (Winner, Runner-up, with event name).
+
+Newsletter Subscription
+
+Simple form to collect participant emails.
+
+Stored in DB for future mailers.
+
+Schedule Page
+
+Day-wise timeline of events.
+
+Filters (day, category, venue).
+
+Download as PDF.
+
+Option to Export to Google Calendar.
+
+👤 USER SYSTEM REQUIREMENTS
+
+Authentication: JWT-based login/signup, bcrypt password hashing, Captcha, Email verification.
+
+User Registration Form: Name, Email, Phone, College, Year, Password.
+
+Dashboard Features:
+
+Profile management (edit details, upload photo).
+
+List of registered events (with status: Registered ✅ | Payment Pending 💳).
+
+Personalized schedule → only their events.
+
+Payment history + download invoice (PDF).
+
+Certificates Section:
+
+Auto-generate participation/winner certificates.
+
+PDF download.
+
+One-click “Share on LinkedIn.”
+
+QR Code-based Fest ID card (scan at entry/events).
+
+Notifications panel (results, updates, announcements).
+
+Option to download all receipts/certificates.
+
+Networking Zone → see other participants in same event (toggle privacy ON/OFF).
+
+🔑 ADMIN PANEL REQUIREMENTS
+
+Authentication (admin login).
+
+Admin Dashboard should have:
+
+Manage Events (Add, Edit, Delete).
+
+Manage Participants (view all, approve/reject, export Excel/CSV).
+
+Payment Management (track paid/unpaid).
+
+Certificates Management (upload template, auto-fill participant names/events).
+
+Announcements/Results (post updates, publish results).
+
+Sponsorship management (view form submissions, approve).
+
+Query Management (view messages from Contact Page).
+
+Bulk Email Notifications → send updates to all registered participants.
+
+Schedule Management (create/update event timeline).
+
+⚙️ BACKEND REQUIREMENTS
+
+Tech stack: Node.js + Express.js
+
+Database: MongoDB (Mongoose ODM).
+
+API Endpoints Needed:
+
+/auth → Register, Login, Email verification.
+
+/events → Get events, register for event, manage events.
+
+/users → Profile, registered events, payments, certificates.
+
+/admin → Manage announcements, results, participants, sponsors.
+
+/payments → Payment integration.
+
+/certificates → Auto-generate & serve PDFs.
+
+/schedule → Fetch, add, update timeline.
+
+/contact → Save queries + send email.
+
+Payments: Razorpay or Stripe integration.
+
+Certificates: Auto-generate PDFs using pdfkit or pdf-lib.
+
+QR Codes: Generate unique fest ID QR codes using qrcode npm package.
+
+Emails: Nodemailer for verification + notifications.
+
+📲 ADDITIONAL TECHNICAL FEATURES
+
+PWA (Progressive Web App): Installable app-like experience, offline schedule + events.
+
+Offline support: Cached data for schedule and registered events.
+
+Security: SSL/HTTPS, hashed passwords, CSRF protection, input validation.
+
+Deployment:
+
+Frontend → Vercel / Netlify
+
+Backend → Render / Heroku
+
+Database → MongoDB Atlas
